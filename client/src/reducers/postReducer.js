@@ -10,7 +10,7 @@ export default function(state = initailState, action) {
     case ADD_POST:
       return {
         ...state,
-        posts: [action.payload, ...state.post]
+        posts: [action.payload, ...state.posts]
       }
     default:
       return state;
