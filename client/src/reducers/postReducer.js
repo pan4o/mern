@@ -1,6 +1,7 @@
 import {
   ADD_POST,
   GET_POSTS,
+  DELETE_POST,
   POST_LOADING
 } from '../actions/types';
 const initailState = {
@@ -26,6 +27,11 @@ export default function(state = initailState, action) {
       return {
         ...state,
         posts: [action.payload, ...state.posts]
+      }
+    case DELETE_POST:
+      return {
+        ...state,
+         posts: state.posts.filter(post => post._id !== action.payload)
       }
     default:
       return state;
